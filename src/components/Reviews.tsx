@@ -1,6 +1,7 @@
 import { Card, CardContent } from '@/components/ui/card';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import Icon from '@/components/ui/icon';
+import AnimatedSection from '@/components/AnimatedSection';
 
 const Reviews = () => {
   const reviews = [
@@ -74,7 +75,8 @@ const Reviews = () => {
 
         <div className="grid md:grid-cols-3 gap-6">
           {reviews.map((review, index) => (
-            <Card key={index} className="hover:shadow-lg transition-shadow">
+            <AnimatedSection key={index} delay={index * 0.1}>
+              <Card className="hover:shadow-lg transition-shadow h-full">
               <CardContent className="p-6">
                 <div className="flex items-center space-x-4 mb-4">
                   <Avatar className="w-16 h-16">
@@ -96,7 +98,8 @@ const Reviews = () => {
                 <p className="text-muted-foreground mb-3">{review.text}</p>
                 <div className="text-sm text-muted-foreground">{review.date}</div>
               </CardContent>
-            </Card>
+              </Card>
+            </AnimatedSection>
           ))}
         </div>
       </div>

@@ -1,5 +1,6 @@
 import { Button } from '@/components/ui/button';
 import Icon from '@/components/ui/icon';
+import { motion } from 'framer-motion';
 
 const Hero = () => {
   const scrollToContacts = () => {
@@ -14,13 +15,28 @@ const Hero = () => {
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div>
-            <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-6">
+            <motion.h1 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              className="text-4xl md:text-6xl font-bold text-foreground mb-6"
+            >
               Профессиональный ремонт кровли
-            </h1>
-            <p className="text-lg md:text-xl text-muted-foreground mb-8">
+            </motion.h1>
+            <motion.p 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="text-lg md:text-xl text-muted-foreground mb-8"
+            >
               Качественные кровельные работы с гарантией. Более 10 лет опыта. Надежность проверенная временем.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4">
+            </motion.p>
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="flex flex-col sm:flex-row gap-4"
+            >
               <Button size="lg" onClick={scrollToContacts}>
                 Получить консультацию
               </Button>
@@ -28,8 +44,13 @@ const Hero = () => {
                 <Icon name="Phone" size={20} className="mr-2" />
                 Заказать звонок
               </Button>
-            </div>
-            <div className="grid grid-cols-3 gap-6 mt-12">
+            </motion.div>
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              className="grid grid-cols-3 gap-6 mt-12"
+            >
               <div>
                 <div className="text-3xl font-bold text-primary mb-2">10+</div>
                 <div className="text-sm text-muted-foreground">Лет опыта</div>
@@ -42,15 +63,20 @@ const Hero = () => {
                 <div className="text-3xl font-bold text-primary mb-2">98%</div>
                 <div className="text-sm text-muted-foreground">Довольных клиентов</div>
               </div>
-            </div>
+            </motion.div>
           </div>
-          <div className="relative">
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="relative"
+          >
             <img 
               src="https://cdn.poehali.dev/projects/c3cb7d48-caf1-45c7-aa2f-6fee065312bb/files/19f251e8-a088-4543-bdd1-d031aec6687e.jpg" 
               alt="Профессиональный ремонт кровли"
               className="rounded-lg shadow-2xl w-full h-auto"
             />
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

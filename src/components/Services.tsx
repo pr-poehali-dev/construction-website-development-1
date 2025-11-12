@@ -1,6 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import Icon from '@/components/ui/icon';
+import AnimatedSection from '@/components/AnimatedSection';
 
 const Services = () => {
   const services = [
@@ -69,7 +70,8 @@ const Services = () => {
 
         <div className="grid md:grid-cols-3 gap-6">
           {services.map((service, index) => (
-            <Card key={index} className="hover:shadow-xl transition-shadow">
+            <AnimatedSection key={index} delay={index * 0.1}>
+              <Card className="hover:shadow-xl transition-shadow h-full">
               <CardHeader>
                 <div className="w-14 h-14 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
                   <Icon name={service.icon} className="text-primary" size={28} />
@@ -91,7 +93,8 @@ const Services = () => {
                   Заказать услугу
                 </Button>
               </CardContent>
-            </Card>
+              </Card>
+            </AnimatedSection>
           ))}
         </div>
 

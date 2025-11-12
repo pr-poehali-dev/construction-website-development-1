@@ -6,6 +6,7 @@ import { Label } from '@/components/ui/label';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import Icon from '@/components/ui/icon';
 import { useToast } from '@/hooks/use-toast';
+import AnimatedSection from '@/components/AnimatedSection';
 
 const Calculator = () => {
   const { toast } = useToast();
@@ -98,8 +99,9 @@ const Calculator = () => {
           </p>
         </div>
 
-        <div className="max-w-3xl mx-auto">
-          <Card className="shadow-xl">
+        <AnimatedSection>
+          <div className="max-w-3xl mx-auto">
+            <Card className="shadow-xl">
             <CardHeader className="bg-primary/5">
               <CardTitle className="flex items-center space-x-2">
                 <Icon name="Calculator" className="text-primary" size={28} />
@@ -223,8 +225,9 @@ const Calculator = () => {
                 </div>
               </div>
             </CardContent>
-          </Card>
-        </div>
+            </Card>
+          </div>
+        </AnimatedSection>
       </div>
     </section>
   );

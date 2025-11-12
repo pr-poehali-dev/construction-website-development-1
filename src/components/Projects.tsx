@@ -2,6 +2,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import Icon from '@/components/ui/icon';
 import ProjectGallery from '@/components/ProjectGallery';
+import AnimatedSection from '@/components/AnimatedSection';
 
 const Projects = () => {
   const projects = [
@@ -57,7 +58,8 @@ const Projects = () => {
 
         <div className="grid md:grid-cols-3 gap-8">
           {projects.map((project, index) => (
-            <Card key={index} className="overflow-hidden hover:shadow-xl transition-shadow">
+            <AnimatedSection key={index} delay={index * 0.15}>
+              <Card className="overflow-hidden hover:shadow-xl transition-shadow h-full">
               <div className="relative h-64 overflow-hidden">
                 <img 
                   src={project.image} 
@@ -83,7 +85,8 @@ const Projects = () => {
                 </div>
                 <ProjectGallery images={project.gallery} projectName={project.title} />
               </CardContent>
-            </Card>
+              </Card>
+            </AnimatedSection>
           ))}
         </div>
       </div>
