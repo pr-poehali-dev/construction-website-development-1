@@ -28,6 +28,9 @@ const Header = () => {
           <button onClick={() => scrollToSection('about')} className="text-foreground hover:text-primary transition-colors">
             О компании
           </button>
+          <button onClick={() => scrollToSection('services')} className="text-foreground hover:text-primary transition-colors">
+            Услуги
+          </button>
           <button onClick={() => scrollToSection('projects')} className="text-foreground hover:text-primary transition-colors">
             Проекты
           </button>
@@ -59,6 +62,9 @@ const Header = () => {
             </button>
             <button onClick={() => scrollToSection('about')} className="text-left text-foreground hover:text-primary transition-colors">
               О компании
+            </button>
+            <button onClick={() => scrollToSection('services')} className="text-left text-foreground hover:text-primary transition-colors">
+              Услуги
             </button>
             <button onClick={() => scrollToSection('projects')} className="text-left text-foreground hover:text-primary transition-colors">
               Проекты
