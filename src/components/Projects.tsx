@@ -1,32 +1,45 @@
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import Icon from '@/components/ui/icon';
+import ProjectGallery from '@/components/ProjectGallery';
 
 const Projects = () => {
   const projects = [
     {
-      image: 'https://cdn.poehali.dev/projects/c3cb7d48-caf1-45c7-aa2f-6fee065312bb/files/550b971b-0c5c-4c5e-9c35-3009829db27f.jpg',
+      image: 'https://cdn.poehali.dev/projects/c3cb7d48-caf1-45c7-aa2f-6fee065312bb/files/ecbc9ca6-8a21-4e88-bca2-3f6bee867e76.jpg',
       title: 'Коттедж в Подмосковье',
       category: 'Полная замена кровли',
       area: '250 м²',
       duration: '14 дней',
-      description: 'Полная замена металлочерепицы с утеплением и гидроизоляцией'
+      description: 'Полная замена металлочерепицы с утеплением и гидроизоляцией',
+      gallery: [
+        'https://cdn.poehali.dev/projects/c3cb7d48-caf1-45c7-aa2f-6fee065312bb/files/ecbc9ca6-8a21-4e88-bca2-3f6bee867e76.jpg',
+        'https://cdn.poehali.dev/projects/c3cb7d48-caf1-45c7-aa2f-6fee065312bb/files/9a244b6c-da3e-41bf-9356-4b1bc7094529.jpg'
+      ]
     },
     {
-      image: 'https://cdn.poehali.dev/projects/c3cb7d48-caf1-45c7-aa2f-6fee065312bb/files/550b971b-0c5c-4c5e-9c35-3009829db27f.jpg',
+      image: 'https://cdn.poehali.dev/projects/c3cb7d48-caf1-45c7-aa2f-6fee065312bb/files/2846dcca-0afc-4d08-9a4d-b7140bd0c6e7.jpg',
       title: 'Частный дом',
       category: 'Ремонт мягкой кровли',
       area: '180 м²',
       duration: '10 дней',
-      description: 'Капитальный ремонт битумной черепицы с заменой основания'
+      description: 'Капитальный ремонт битумной черепицы с заменой основания',
+      gallery: [
+        'https://cdn.poehali.dev/projects/c3cb7d48-caf1-45c7-aa2f-6fee065312bb/files/2846dcca-0afc-4d08-9a4d-b7140bd0c6e7.jpg',
+        'https://cdn.poehali.dev/projects/c3cb7d48-caf1-45c7-aa2f-6fee065312bb/files/fbf7e685-57a9-44f7-aec0-f130fed63c40.jpg'
+      ]
     },
     {
-      image: 'https://cdn.poehali.dev/projects/c3cb7d48-caf1-45c7-aa2f-6fee065312bb/files/550b971b-0c5c-4c5e-9c35-3009829db27f.jpg',
+      image: 'https://cdn.poehali.dev/projects/c3cb7d48-caf1-45c7-aa2f-6fee065312bb/files/fb7887f4-e72f-452d-a129-e634224765e0.jpg',
       title: 'Загородный дом',
       category: 'Монтаж фальцевой кровли',
       area: '320 м²',
       duration: '18 дней',
-      description: 'Устройство фальцевой кровли из оцинкованной стали'
+      description: 'Устройство фальцевой кровли из оцинкованной стали',
+      gallery: [
+        'https://cdn.poehali.dev/projects/c3cb7d48-caf1-45c7-aa2f-6fee065312bb/files/fb7887f4-e72f-452d-a129-e634224765e0.jpg',
+        'https://cdn.poehali.dev/projects/c3cb7d48-caf1-45c7-aa2f-6fee065312bb/files/01c2dee6-5253-4fd4-b03b-3201269c10e9.jpg'
+      ]
     }
   ];
 
@@ -58,7 +71,7 @@ const Projects = () => {
               <CardContent className="p-6">
                 <h3 className="text-xl font-bold text-foreground mb-3">{project.title}</h3>
                 <p className="text-muted-foreground mb-4">{project.description}</p>
-                <div className="flex items-center justify-between text-sm">
+                <div className="flex items-center justify-between text-sm mb-4">
                   <div className="flex items-center space-x-2">
                     <Icon name="Maximize2" size={16} className="text-primary" />
                     <span className="text-muted-foreground">{project.area}</span>
@@ -68,6 +81,7 @@ const Projects = () => {
                     <span className="text-muted-foreground">{project.duration}</span>
                   </div>
                 </div>
+                <ProjectGallery images={project.gallery} projectName={project.title} />
               </CardContent>
             </Card>
           ))}
